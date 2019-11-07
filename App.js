@@ -7,7 +7,14 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, View, NativeModules, Button} from 'react-native';
+import {
+  TouchableOpacity,
+  Text,
+  Platform,
+  View,
+  NativeModules,
+  Button,
+} from 'react-native';
 
 class App extends Component {
   render() {
@@ -17,51 +24,39 @@ class App extends Component {
           height: '100%',
           alignItems: 'center',
           justifyContent: 'center',
+          width: '100%',
         }}>
-        <View>
-          <Button
-            style={{width: 300}}
-            onPress={() => launchStripeActivityOne()}
-            title="Start stripe sample activity"
-          />
-        </View>
-        <View style={{marginTop: 16}}>
-          <Button
-            style={{width: 300}}
-            onPress={() => launchStripeActivityTwo()}
-            title="Start stripe Main activity"
-          />
-        </View>
+        <TouchableOpacity
+          style={{marginTop: 16}}
+          onPress={() => setGeoLocationInFirebase()}>
+          <View
+            style={{
+              backgroundColor: '#00AAFF',
+              padding: 20,
+              justifyContent: 'center',
+              alignContent: 'center',
+              width: '100%',
+            }}>
+            <Text style={{color: '#FFFFFF'}}>set GeoLocation In Firebase</Text>
+          </View>
+        </TouchableOpacity>
       </View>
     );
   }
 }
 
-const launchStripeActivityOne = () => {
-  if (Platform.OS === 'android') {
-    var videoLoaded = NativeModules.ActivityStarter.navigateToExample();
-    videoLoaded
-      .then(result => {
-        console.log('Promise Returned Success');
-      })
-      .catch(error => {
-        console.log('Promise Returned Failure');
-      });
-  }
-};
+const setGeoLocationInFirebase = () => {
+  var locationObj = {
+    locationName: 'firebase-hq',
+    latitude: 37.7853889,
+    longitude: -122.4056973,
+  };
 
-const launchStripeActivityTwo = () => {
   if (Platform.OS === 'android') {
-    var paymentConfigFromRN = {
-      amount: 15.0,
-      debug: true,
-      isLiveModeStripeUserId: false,
-      paymentUrl: 'http://test url',
-    };
-    var videoLoaded = NativeModules.ActivityStarter.navigateToStripeMain(
-      JSON.stringify(paymentConfigFromRN),
+    var locationValue = NativeModules.GeoFireModule.setLocationInGeoFire(
+      JSON.stringify(locationObj),
     );
-    videoLoaded
+    locationValue
       .then(result => {
         console.log('Promise Returned Success');
       })

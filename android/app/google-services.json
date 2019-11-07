@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "888225578701",
+    "firebase_url": "https://relsellstripedemo.firebaseio.com",
+    "project_id": "relsellstripedemo",
+    "storage_bucket": "relsellstripedemo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888225578701:android:5782d824f7167527c53384",
+        "android_client_info": {
+          "package_name": "com.stripedemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888225578701-svmppnr1t0n1ono8fiflfflvnd6308i0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stripedemo",
+            "certificate_hash": "80a36546196d91a3c577abc26115c1c91f8e9f2f"
+          }
+        },
+        {
+          "client_id": "888225578701-n02j8jl39viomdsvmnrah0b5d6mm9lpi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB70qm9m2LMNIJN2aca9mt6PvY1XmCEB_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888225578701-n02j8jl39viomdsvmnrah0b5d6mm9lpi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
